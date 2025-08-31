@@ -1,0 +1,33 @@
+baseURL: 'https://mikeywrites.fyi/'
+theme: hugo-bearcub
+copyright: Mikey Lombardi (CC0 1.0)
+defaultContentLanguage: en
+
+enableRobotsTXT: true
+
+markup:
+  highlight:
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: false
+
+languages:
+  en:
+    languageName: en-US 🇺🇸
+    languageCode: en-US
+    contentDir: content
+    title: mikey writes fyi
+    params:
+      madeWith: Made with [Bear Cub](https://github.com/clente/hugo-bearcub)
+
+params:
+  description: Personal writing by Mikey Lombardi
+  title: mikey writes
+  dateFormat: 2006-01-02
+  hideUntranslated: true
+  generateSocialCard: true
+
+  social:
+    twitter: bigfnmikey
+  author:
+    name: Mikey Lombardi

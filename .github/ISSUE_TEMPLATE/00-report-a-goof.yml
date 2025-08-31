@@ -1,0 +1,57 @@
+name: Report a goof
+description: >-
+  Report a problem, mistake, or other category of goof on the site or in the
+  repository.
+
+title: "Goof Report: "
+
+labels:
+  - goof
+  - needs-triage
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to tell me where I goofed. I appreciate it.
+
+        Seriously, reports on mistakes, broken links, etc are a gift. Thank you.
+  - type: dropdown
+    id: category
+    validations: { required: true }
+    attributes:
+      label: Goof category
+      description: >-
+        What sort of goof (or goofs) did you find? Select all options that apply.
+      multiple: true
+      options:
+        - Broken link
+        - Inaccurate content
+        - Incorrect grammar
+        - Incorrect formatting
+        - Typo
+        - Other
+  - type: textarea
+    id: location
+    validations: { required: true }
+    attributes:
+      label: Goof location
+      description: |-
+        Please indicate where you found the goof or goofs.
+        
+        I would really appreciate it if you could provide any of the following:
+
+        - The GitHub permalink to the line or lines where the goof is located.
+        - The URL to the live site page with the goof, preferably with the nearest anchor.
+        - The project-relative path to the file with the goof, wrapped in backticks.
+
+        It's easiest for me to read if you add each file as a separate unordered list item.
+  - type: textarea
+    id: description
+    validations: { required: true }
+    attributes:
+      label: Goof description
+      description: >-
+        Please help me understand how I goofed. The more context I have for a mistake, the sooner
+        I can correct it. Some goofs, like typos, don't require much information. Other goofs,
+        like inaccurate content, may require a lot more than others.

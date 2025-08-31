@@ -1,20 +1,12 @@
 ---
-title: Home
-summary: >-
-  This is an example site for digital books, built on Platen!
+title: "Home"
+menu: "main"
+weight: 1
 ---
 
-This is a place with some very good games I made. It uses hugo and markdown to turn some plaintext
-drafts into a website.
+I'm Mikey Lombardi, and this is a place where I work through my thoughts by posting them. I've been
+a full-time open source developer and writer since 2017. I write games, documentation, software
+tools and libraries.
 
-You can install this website as an app, it's a fully functional PWA!
-
-You can checkout two different versions of Picaroons, either via the menu or these links:
-
-1. [Picaroons as a multi-page project](/picaroons)
-1. [Picaroons as a single-page project](/picaroons-sp)
-
-You can also checkout the blog via the menu or [this link](/posts).
-
-While not currently implemented, you can include multiple language versions of your site and switch
-between them via the menu.
+I spend my spare time with my family and friends, writing, gardening, lifting weights, and trying
+to figure out how I can make better or more interesting tools and toys.

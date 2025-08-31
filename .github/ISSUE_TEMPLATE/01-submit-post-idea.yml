@@ -1,0 +1,36 @@
+name: Submit an idea for a post
+description: >-
+  Submit a topic for me to cover in a blog post. I use this form myself to track ideas I want to
+  get to.
+
+title: "Topic: "
+
+labels:
+  - post-idea
+  - needs-triage
+
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thanks for submitting an idea you want me to write a post about. I can't promise that
+        I'll write a post for every submission, but I do promise to consider every submission
+        and clearly indicate whether I'll write the post and why.
+  - type: input
+    id: synopsis
+    validations: { required: true }
+    attributes:
+      label: Synopsis
+      description: >-
+        Please provide a short overview of the post you'd like me to write.
+  - type: textarea
+    id: details
+    validations: { required: true }
+    attributes:
+      label: Details
+      description: |-
+        Please provide relevant context to help me write the post, like:
+
+        - Why you think _I_ should write this post.
+        - Links to and high-level summaries of relevant information.
+        - Any points you particularly want covered in the post.

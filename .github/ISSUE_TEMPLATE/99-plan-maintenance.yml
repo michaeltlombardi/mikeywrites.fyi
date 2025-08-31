@@ -1,0 +1,45 @@
+name: Plan maintenance work
+description: >-
+  Submit a work item to track non-trivial maintenance work. This is for my own to use. You
+  probably don't want to submit an issue with this form.
+
+title: ''
+
+labels:
+  - maintenance
+
+body:
+  - type: dropdown
+    id: categories
+    validations: { required: true }
+    attributes:
+      label: Categories
+      description: |-
+        Select the appropriate categories:
+
+        - `AuthX` - affects the authoring experience - linting, editor configuration, etc.
+        - `MaintX` - affects the maintenance experience - GitHub templates, CI, etc.
+        - `Theme` - affects the site theme - adding partials, changing favicon, etc.
+        - `Site` - affects the site overall - configuration, home page, etc.
+        - `Posts` - affects existing posts - metadata updates, tags, etc.
+      options:
+        - AuthX
+        - MaintX
+        - Theme
+        - Site
+        - Posts
+  - type: textarea
+    id: context
+    validations: { required: true }
+    attributes:
+      label: Context
+      description: >-
+        Provide context for why the maintenance work is needed.
+  - type: textarea
+    id: description
+    validations: { required: true }
+    attributes:
+      label: Description
+      description: >-
+        Describe the work that needs to be done. If the work needs to be decomposed into several
+        tasks, use a list or task list for tracking.

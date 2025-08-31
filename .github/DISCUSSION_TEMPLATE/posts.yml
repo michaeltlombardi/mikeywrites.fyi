@@ -1,0 +1,44 @@
+title: 'Post: '
+body:
+  - type: input
+    id: url
+    validations: { required: true }
+    attributes:
+      label: Canonical URL
+      description: >-
+        Defines the canonical URL for the published post.
+  - type: input
+    id: publish_date
+    validations: { required: true }
+    attributes:
+      label: Published on
+      description: >-
+        Defines the ISO8601 date for when the post was published.
+  - type: textarea
+    id: overview
+    validations: { required: true }
+    attributes:
+      label: Overview
+      description: >-
+        Provides a short description of the post.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: >-
+        Provides any notes about the post.
+  - type: textarea
+    id: updates
+    attributes:
+      label: Updates
+      description: >-
+        Notes any updates made to the post since initial publishing.
+  - type: dropdown
+    id: translations
+    attributes:
+      label: Translations
+      description: >-
+        Lists any translations made for the post.
+      options:
+        - en-US
+      default: 0
