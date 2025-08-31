@@ -26,6 +26,7 @@ body:
         - Theme
         - Site
         - Posts
+      multiple: true
   - type: textarea
     id: context
     validations: { required: true }
