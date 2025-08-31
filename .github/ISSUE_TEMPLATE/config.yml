@@ -5,10 +5,10 @@ contact_links:
     about: If you want to discuss a specific post, look for it in the linked discussions.
   - name: Ask a question
     url: https://github.com/michaeltlombardi/mikeywrites.fyi/discussions/categories/q-a
-    about: If you'd like to ask Mikey or other readers a question, do so in GitHub discussions.
+    about: If you'd like to ask me or other readers a question, do so in GitHub discussions.
   - name: Start a conversation
     url: https://github.com/michaeltlombardi/mikeywrites.fyi/discussions/categories/chat
     about: You can also start a general conversation in GitHub discussions.
   - name: Check news from Mikey
     url: https://github.com/michaeltlombardi/mikeywrites.fyi/discussions/categories/tidings
-    about: Mikey occasionally posts news that doesn't make sense as a blog post in GitHub discussions.
+    about: I occasionally post news that doesn't make sense as a blog post in GitHub discussions.
