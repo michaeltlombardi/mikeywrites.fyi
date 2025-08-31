@@ -3,8 +3,6 @@ description: >-
   Submit a work item to track non-trivial maintenance work. This is for my own to use. You
   probably don't want to submit an issue with this form.
 
-title: ''
-
 labels:
   - maintenance
 
