@@ -446,6 +446,27 @@ As always, the important thing here is that you want to ensure reviewers have th
 to start reviewing and understanding the changes you're submitting. Use your judgement, but create
 a relatively lightweight process and follow it.
 
+## Keeping a change request up to date
+
+Inevitably, you'll find yourself working on a change request and find that some other changes get
+merged to the upstream after you get started but before your change is merged. Typically, people
+resolve this by either rebasing on `upstream/main` or merging `upstream/main` into your working
+branch.
+
+The correct answer is to _always_ rebase on `upstream/main`. **Never** merge `main` into your
+working branch. It makes the changes in your branch _extremely_ noisy, difficult to follow, and only
+serves to make reviewing your work more difficult.
+
+The following snippet is one I often use to rebase my working branch while I'm working.
+
+```sh
+git fetch upstream --prune && git rebase upstream/main
+```
+
+Sometimes, you'll need to address merge conflicts. I prefer doing this locally in my editor. After
+you've rebased and resolved any merge conflicts, push your working branch with the
+`--force-with-lease` option to ensure the branch on your fork is updated.
+
 ## Marking a change request as ready for review
 
 Change requests should remain in draft until all code for the change has been implemented, CI tests
