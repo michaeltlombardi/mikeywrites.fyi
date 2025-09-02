@@ -32,9 +32,11 @@ improved with a few (relatively) small adjustments.
 > if you're reading this post, you're familiar with such terminology. If you're not, you can
 > always reach out to me. If you need help understanding how to use git or get stuck on anything
 > related to the guidance I'm writing here, I'm genuinely happy to help you.
->
-> If you're reaching out to yell at me, do that on twitter, where I'll probably ignore it because
-> I don't have the energy to fight online over this stuff as much as I used to.
+
+If you're reaching out to yell at me, do that on twitter, where I'll probably ignore it because I
+don't have the energy to fight online over this stuff as much as I used to. Otherwise, if you're
+reaching out to have a conversation or report a goof I've made in this post, _please_ see footnote
+[^0].
 
 ## Always work from a branch on a fork
 
@@ -446,6 +448,27 @@ As always, the important thing here is that you want to ensure reviewers have th
 to start reviewing and understanding the changes you're submitting. Use your judgement, but create
 a relatively lightweight process and follow it.
 
+## Keeping a change request up to date
+
+Inevitably, you'll find yourself working on a change request and find that some other changes get
+merged to the upstream after you get started but before your change is merged. Typically, people
+resolve this by either rebasing on `upstream/main` or merging `upstream/main` into your working
+branch.
+
+The correct answer is to _always_ rebase on `upstream/main`. **Never** merge `main` into your
+working branch. It makes the changes in your branch _extremely_ noisy, difficult to follow, and only
+serves to make reviewing your work more difficult.
+
+The following snippet is one I often use to rebase my working branch while I'm working.
+
+```sh
+git fetch upstream --prune && git rebase upstream/main
+```
+
+Sometimes, you'll need to address merge conflicts. I prefer doing this locally in my editor. After
+you've rebased and resolved any merge conflicts, push your working branch with the
+`--force-with-lease` option to ensure the branch on your fork is updated.
+
 ## Marking a change request as ready for review
 
 Change requests should remain in draft until all code for the change has been implemented, CI tests
@@ -496,18 +519,26 @@ Until next time,
 ~ Mikey
 
 <!-- footnotes -->
+[^0]: I'm always happy to have a conversation and receive feedback. Options include:
+
+      - Start a thread or join an existing one in the [GitHub discussion for this post][aa].
+      - Report any goofs I've made, like typos or inaccuracies, [as a GitHub issue][ab].
+
+      And, if you do join the conversation or report a goof, know that I appreciate you.
 
 [^1]: As pointed out to me by a reviewer much smarter than me, this is very pedantic for apparently
-  little payoff. That's true. Branch naming is the least important thing I discuss in this post. On
-  the other hand, this post is a collection of my pedantic heterodox opinions on working with git,
-  and I do genuinely find it helpful to quickly filter and orient myself in codebases by branch
-  names.
+      little payoff. That's true. Branch naming is the least important thing I discuss in this post. On
+      the other hand, this post is a collection of my pedantic heterodox opinions on working with git,
+      and I do genuinely find it helpful to quickly filter and orient myself in codebases by branch
+      names.
 
-  I don't say so in the body of this post, but these are just my personal (correct) opinions. You're
-  free to do whatever makes sense for your context. Sometimes, I break these rules myself. None of
-  us is perfect, mea culpa, etc.
+      I don't say so in the body of this post, but these are just my personal (correct) opinions. You're
+      free to do whatever makes sense for your context. Sometimes, I break these rules myself. None of
+      us is perfect, mea culpa, etc.
 
 <!-- link reference definitions -->
+[aa]: https://github.com/michaeltlombardi/mikeywrites.fyi/discussions/12
+[ab]: https://github.com/michaeltlombardi/mikeywrites.fyi/issues/new?template=00-report-a-goof.yml&location=-%20%60content%2Fblog%2Fon-git-practices.md%60
 [01]: https://dev.to/cbillowes/why-i-create-atomic-commits-in-git-kfi
 [02]: https://www.conventionalcommits.org/en/v1.0.0/
 [03]: https://github.com/puppetlabs/Puppet.Dsc/commit/d3433d3b105cab580d1233a728bc6beab86d022d
