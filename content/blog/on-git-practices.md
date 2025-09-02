@@ -519,14 +519,14 @@ Until next time,
 <!-- footnotes -->
 
 [^1]: As pointed out to me by a reviewer much smarter than me, this is very pedantic for apparently
-  little payoff. That's true. Branch naming is the least important thing I discuss in this post. On
-  the other hand, this post is a collection of my pedantic heterodox opinions on working with git,
-  and I do genuinely find it helpful to quickly filter and orient myself in codebases by branch
-  names.
+      little payoff. That's true. Branch naming is the least important thing I discuss in this post. On
+      the other hand, this post is a collection of my pedantic heterodox opinions on working with git,
+      and I do genuinely find it helpful to quickly filter and orient myself in codebases by branch
+      names.
 
-  I don't say so in the body of this post, but these are just my personal (correct) opinions. You're
-  free to do whatever makes sense for your context. Sometimes, I break these rules myself. None of
-  us is perfect, mea culpa, etc.
+      I don't say so in the body of this post, but these are just my personal (correct) opinions. You're
+      free to do whatever makes sense for your context. Sometimes, I break these rules myself. None of
+      us is perfect, mea culpa, etc.
 
 <!-- link reference definitions -->
 [01]: https://dev.to/cbillowes/why-i-create-atomic-commits-in-git-kfi
