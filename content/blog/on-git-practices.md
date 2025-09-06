@@ -521,10 +521,10 @@ Until next time,
 <!-- footnotes -->
 [^0]: I'm always happy to have a conversation and receive feedback. Options include:
 
-      - Start a thread or join an existing one in the [GitHub discussion for this post][aa].
-      - Report any goofs I've made, like typos or inaccuracies, [as a GitHub issue][ab].
+- Start a thread or join an existing one in the [GitHub discussion for this post][aa].
+- Report any goofs I've made, like typos or inaccuracies, [as a GitHub issue][ab].
 
-      And, if you do join the conversation or report a goof, know that I appreciate you.
+  And, if you do join the conversation or report a goof, know that I appreciate you.
 
 [^1]: As pointed out to me by a reviewer much smarter than me, this is very pedantic for apparently
       little payoff. That's true. Branch naming is the least important thing I discuss in this post. On

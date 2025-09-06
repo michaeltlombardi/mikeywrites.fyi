@@ -1,0 +1,373 @@
+# Defines the configuration for the rules Markdownlint checks against. To
+# review the configuration for how the CLI behaves, see
+# `.markdownlint-cli2.yaml`
+
+# Default state for all rules
+default: true
+
+# Path to configuration file to extend
+extends: null
+
+# Rule definitions
+#
+# Use rule ID for each key. Add rules in numerical order. Include comments for
+# deprecated keys. Fully define all rules with comments to explain purpose.
+
+# Ensure headings increment one step at a time for accessiblity navigation.
+MD001: true
+
+# MD002: Deprecated rule
+
+# Ensure headings use consistent style for readability.
+MD003:
+  # Standardize to headings like `# Heading text`
+  style: atx
+
+# Ensure unordered lists always use the same style.
+MD004:
+  # Always use a `-` for list items for clarity and readability.
+  style: dash
+
+# Ensure list items are indented consistently for readability.
+MD005: true
+
+# MD006: deprecated rule
+
+# Ensure consistent indentation for unordered list items for parsing and
+# readability.
+MD007:
+  # Spaces for indent
+  indent: 2
+  # Whether to indent the first level of the list
+  start_indented: false
+  # Spaces for first level indent (when start_indented is set)
+  start_indent: 2
+
+# MD008: deprecated rule
+
+# Forbid trailing spaces for consistent parsing and better diffs.
+MD009: 
+  # Spaces after text to indicate line break - set to 0 to forbid.
+  br_spaces: 0
+  # Forbid empty list items.
+  list_item_empty_lines: false
+  # Forbid spaces at end of block elements like paragraphs.
+  strict: true
+
+# Forbid general use of hard tabs and use spaces instead for consistent parsing.
+MD010:
+  # Forbid tabs in code blocks
+  code_blocks: true
+  # Allow tabs in codeblocks with listed language IDs
+  ignore_code_languages:
+    - go
+    - go-html-template
+    - go-template
+    - go-text-template
+  # Number of spaces to replace each tab with
+  spaces_per_tab: 2
+
+# Ensure links are correctly defined as `[text](href)`, not `(text)[href]`.
+MD011: true
+
+# Forbid more than one consecutive blank line for readability. Doesn't affect
+# consecutive blank lines in codeblocks.
+MD012:
+  # More than one consecutive blank line triggers the rule.
+  maximum: 1
+
+# Define maximum line lengths for readability and diffing.
+MD013:
+  # Number of characters - limit for diffing on GitHub and readability.
+  line_length: 100
+  # Include headings
+  headings: true
+  # Number of characters for headings - limit for readability
+  heading_line_length: 120
+  # Include code blocks
+  code_blocks: true
+  # Number of characters for code blocks - limit for readability
+  code_block_line_length: 80
+  # Include tables
+  tables: true
+  # Disable strict length checking, which marks any line over character count
+  strict: false
+  # Enable stern length checking, which marks any line over character count
+  # with spaces in it, as those lines can be collapsed. This is the behavior
+  # for the reflow extension.
+  stern: true
+
+# Checks for shell script codeblocks where commands have leading `$` and output
+# doesn't. This rule doesn't apply, as we use separate code blocks for input
+# and output blocks, like:
+#
+# > Run the following command to review the data:
+# >
+# > ```sh
+# > cat foo.yaml
+# > ```
+#
+# > ```yaml
+# > key: value
+# > ```
+MD014: false
+
+# MD015: deprecated rule
+# MD016: deprecated rule
+# MD017: deprecated rule
+
+# Require a space after octothorpes in heading definitions for correct parsing
+# and readability.
+MD018: true
+
+# Require exactly one space after octothropes in heading for consistency.
+MD019: true
+
+# Require a space befor octothorpes in heading definition for closed-atx style.
+# This rule doesn't apply as we don't use closed-atx style headings.
+MD020: false
+
+# Require exactly one space before closing octothorpes in heading definition
+# for closed-atx style. This rule doesn't apply as we don't use closed-atx
+# style headings.
+MD021: false
+
+# Require blank lines around headings for readability and consistent parsing.
+MD022:
+  # Require exactly one blank line before a heading definition.
+  lines_above: 1
+  # Require exactly one blank line after a heading definition.
+  lines_below: 1
+
+# Headings must start at the beginning of the line without indentation for
+# readability and consistent parsing.
+MD023: true
+
+# Forbid duplicate headings in the document for accessibility navigation.
+MD024:
+  # Allow duplicate headings for non-sibling headings. Used for structured
+  # documents with repeated headings, like changelogs and reference docs.
+  siblings_only: true
+
+# Only allow a single H1 for the document.
+MD025:
+  # Blog theme uses `title: <title>` for H1. Document shouldn't define an H1
+  # heading in the body.
+  front_matter_title: ^\\s*title\\s*[:=]
+  # Forbid more than a single h1 per document.
+  level: 1
+
+# Forbid any trailing punctuation in headings for accessibility and readability.
+# We ignore this rule because we lint the prose with Vale, not Markdownlint.
+MD026: false
+
+# Require exactly one space after blockquote symbol for consistent parsing and
+# readability.
+MD027:
+  # Apply the rule to list items in blockquotes for consistency.
+  list_items: true
+
+# Forbid consecutive block quotes separated by a blank line without the
+# blockquote character for consistent parsing.
+MD028: true
+
+# ALways prefix ordered list items as `1.` for maintainability, allowing
+# quick resorting of items without fixing the prefixes. Also ensures a
+# consistent indentation for ordered list items.
+MD029:
+  style: one
+
+# Use consistent spacing for list items after the prefix.
+MD030:
+  # Always use one space after `-` for unordered list items.
+  ul_single: 1
+  ul_multi: 1
+  # Always use two spaces after `1.` for ordered list items. This ensures that
+  # following lines indent to four spaces instead of needing to manually indent
+  # to 3 spaces.
+  ol_single: 2
+  ol_multi: 2
+
+# Require blank lines around code fences for consistent parsing and readability.
+MD031:
+  # Apply rule even for code fences in list items for consistency.
+  list_items: true
+
+# Require blank lines around list definitions for consistent parsing and
+# readability.
+MD032: true
+
+# Forbid HTML elements for consistency. We should prefer shortcodes or markdown
+# render hooks in the theme.
+MD033:
+  # Define allowed HTML elements by tag, none currently.
+  allowed_elements: []
+
+# Forbid bare URLs in prose for readability and accessibilty.
+MD034: true
+
+# Always use 80 dashes for a horizontal rule in the document for consistency
+# and to make the purpose of the syntax clear without review.
+#
+# This clearly separates the document visually.
+#
+# You can use the snippet prefix `hr-` to insert a horizontal rule in VS Code.
+MD035:
+  style: --------------------------------------------------------------------------------
+
+# Forbid using emphasis as a pseudoheading for accessibility navigation.
+MD036:
+  # Allow fully emphasized paragraphs ending with punctuation, as this indicates
+  # an intentionally emphasized parahraph, like:
+  #
+  # _Okay, sure---so what?_
+  punctuation: .,;:!?。，；：！？
+
+# Forbid leading and trailing spaces in emphasized text for consistent parsing
+# and readability.
+MD037: true
+
+# Forbid leading and trailing spaces in inline code for consistent parsing and
+# readability. ` invalid ` is forbidden but `valid` and `` `valid` `` are okay.
+MD038: true
+
+# Forbid leading and trailing spaces in link text for consistent parsing and
+# readability. `[ invalid ](link)` is forbidden but `[valid](link)` is okay.
+MD039: true
+
+# Require a language ID for code fences for clarity and consistent syntax
+# highlighting.
+MD040:
+  # Allow all languages, even those not syntax highlighted by Hugo.
+  allowed_languages: []
+  # ALlow trailing information for code fences, like:
+  #
+  # ```go {linenos=inline hl_lines=[3,"6-8"] style=emacs}
+  # package main
+  # 
+  # import "fmt"
+  # 
+  # func main() {
+  #     for i := 0; i < 3; i++ {
+  #         fmt.Println("Value of i:", i)
+  #     }
+  # }
+  # ```
+  language_only: false
+
+# Require the first content in the document to be an H1 heading for
+# accessibility navigation.
+MD041:
+  # Forbid any content before the heading. This only applies to non-Hugo
+  # Markdown, since the theme pulls the H1 from the frontmatter.
+  allow_preamble: false
+  # Hugo theme retrieves the title from frontmatter with the `title` field,
+  # like `title: <title>`.
+  front_matter_title: ^\s*title\s*[:=]
+  # Ensure we check for H1 headings.
+  level: 1
+
+# Forbid empty links for accessibility and user experience.
+MD042: true
+
+# Allow any headings. This content doesn't use strongly structured headings,
+# so we ignore this rule.
+MD043: false
+
+# Require correct casing for proper names. We ignore this rule because we lint
+# the prose with Vale, not Markdownlint.
+MD044: false
+
+# Require all images to define alt text for accessibility. Only applies to
+# Markdown syntax and inline HTML. For images requiring longer alt text, we
+# should use a shortcode or markdown render hook for the site theme.
+MD045: true
+
+# Always use fenced codeblocks for readability and consistent parsing. Never
+# use indented codeblocks, which can't be syntax highlighted and are likely
+# unintentionally parsed from indentation errors.
+MD046:
+  style: fenced
+
+# ALways end documents with a single trailing newline for consistency and to
+# make diff reviews cleaner.
+MD047: true
+
+# Ensure consistent style for code fences for consistent parsing. Always use
+# backticks to align with the use of backticks for inline code.
+MD048:
+  style: backtick
+
+# Always use underscores for emphasis, like `_this_`, for readability and
+# consistent parsing.
+MD049:
+  style: underscore
+
+# Always use asterisks for strong emphasis, like `**this**`, for readability
+# and consistent parsing.
+MD050:
+  style: asterisk
+
+# Require link fragments to resolve correctly for accessibility navigation.
+MD051:
+  # Don't ignore casing for link fragments.
+  ignore_case: false
+  # We don't have any patterns defined for fragments to ignore.
+  ignored_pattern: ''
+
+# Require reference definitions to be defined for accessibility naviagation and
+# to catch missing definitions.
+MD052:
+  # Allow cases where apparent shortcut reference links shouldn't be checked
+  ignored_labels:
+    # Don't warn on checklist items.
+    - '[x]'
+  # Do check for shortcut syntax, like `For more information, see [the help]`.
+  shortcut_syntax: true
+
+# Require reference definitions to be used to catch unintentional removals of
+# links or malformed links that should be referencing a definition.
+MD053:
+  # We have no definitions to ignore.
+  ignored_definitions: []
+
+# Standardize the style for links and images for consistent parsing and
+# readability.
+MD054:
+  # Forbid autolinks, like `<https://mikeywrites.fyi>`.
+  autolink: false
+  # Allow inline links, though we should _only_ use them for fragments, like
+  # `For more information, see [Notes](#notes)`.
+  inline: true
+  # ALlow full reference links as the preferred form. Reference links should
+  # use numeric IDs, like `I use [Kagi][01] for search` where the numeric IDs
+  # start at `01` and increment with each use.
+  full: true
+  # Forbid collapsed links, like `[foo][]`.
+  collapsed: false
+  # Forbid shortcut links, like `[foo]`.
+  shortcut: false
+  # Forbid URL inline links, like `[https://example.com](https://example.com)`.
+  # To show a literal inline link that goes to the specified location, you
+  # should enclose the link text in backticks and use a reference definition.
+  url_inline: false
+
+# Ensure tables have leading and trailing pipes for consistent parsing and
+# readability.
+MD055:
+  style: leading_and_trailing
+
+# Ensure table rows have the same number of columns for consistent parsing and
+# readability.
+MD056: true
+
+# MD057: deprecated rule
+
+# Require leading and trailing blank lines around tables for readability and
+# consistent parsing.
+MD058: true
+
+# This rule checks to ensure link text is useful and communicative for
+# accessibility and navigation. We ignore this rule because we lint the prose
+# with Vale, not Markdownlint.
+MD059: false

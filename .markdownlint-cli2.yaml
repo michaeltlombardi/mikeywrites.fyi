@@ -1,0 +1,21 @@
+# Configuration for the markdownlint CLI
+#
+# This configuration file only applies to the CLI. To review the configured
+# rules, see `.markdownlint.yaml` instead.
+
+# Defines the file globs to lint for the project. For CI and tests, we only
+# care about Markdown files in the `content` folder.
+globs:
+  - "content/**/*.md"
+
+# Don't display progress output.
+noProgress: true
+
+# Show found files on stdout (only valid at root)
+showFound: true
+
+# Ignore the following file globs.
+ignores:
+  - "README.md"
+  - "LICENSE.md"
+  - "LICENSE-CODE.md"
