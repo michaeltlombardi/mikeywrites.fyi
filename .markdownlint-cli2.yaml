@@ -1,0 +1,12 @@
+globs:
+  - "content/**/*.md"
+
+noProgress: true
+
+# Show found files on stdout (only valid at root)
+showFound: true
+
+ignores:
+  - "README.md"
+  - "LICENSE.md"
+  - "LICENSE-CODE.md"
