@@ -237,8 +237,8 @@ reference linking goes a long, long way towards making it easier to follow conte
 
 When you're authoring the body for a commit message, you should:
 
-1. Set the context for _why_ you're making these changes.
-1. Explain _what_ your changes do.
+1.  Set the context for _why_ you're making these changes.
+1.  Explain _what_ your changes do.
 
 Consider using one of the following template for the body of your commit message:
 
@@ -519,12 +519,13 @@ Until next time,
 ~ Mikey
 
 <!-- footnotes -->
+<!-- markdownlint-disable MD007 -->
 [^0]: I'm always happy to have a conversation and receive feedback. Options include:
 
-- Start a thread or join an existing one in the [GitHub discussion for this post][aa].
-- Report any goofs I've made, like typos or inaccuracies, [as a GitHub issue][ab].
+      - Start a thread or join an existing one in the [GitHub discussion for this post][aa].
+      - Report any goofs I've made, like typos or inaccuracies, [as a GitHub issue][ab].
 
-  And, if you do join the conversation or report a goof, know that I appreciate you.
+      And, if you do join the conversation or report a goof, know that I appreciate you.
 
 [^1]: As pointed out to me by a reviewer much smarter than me, this is very pedantic for apparently
       little payoff. That's true. Branch naming is the least important thing I discuss in this post. On
@@ -535,6 +536,7 @@ Until next time,
       I don't say so in the body of this post, but these are just my personal (correct) opinions. You're
       free to do whatever makes sense for your context. Sometimes, I break these rules myself. None of
       us is perfect, mea culpa, etc.
+<!-- markdownlint-enable MD007 -->
 
 <!-- link reference definitions -->
 [aa]: https://github.com/michaeltlombardi/mikeywrites.fyi/discussions/12
