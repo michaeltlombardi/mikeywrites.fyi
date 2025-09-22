@@ -1,0 +1,109 @@
+level: warning
+scope: text
+
+link: https://docs.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/term-collections/units-of-measure-terms
+description: |-
+  When you're listing a measurement with a given unit, always:
+
+  1.  Specify the value with numerals, like `5 kg`, not `five kg`.
+  1.  Always place a nonbreaking space after the numerals and before the unit
+      when spelling out the unit out or using an abbreviation.
+  1.  For measurements where the unit is a symbol, define the symbol immediately
+      after the numerals without a separating nonbreaking space, like `5' long`.
+
+  Measurements require precision, so write them with numerals. Use nonbreaking
+  spaces between the numerals and the unit so that the pair are always
+  displayed together even when the rendered text would normally break across
+  a line.
+message: >-
+  The apparent measurement '%s' uses a regular (breaking) space instead of a
+  nonbreaking space.
+
+extends: existence
+raw:
+  - '(\d+[,.]?){1,}([ ]*)'
+tokens:
+  # Vernacular lengths
+  - feet\b
+  - foot\b         # Singular to account for `five foot six`.
+  - ft\b           # abbreviation for feet
+  - inch(es)?\b
+  # - in\b         # abbreviation for inches, too commonly used.
+  - yards
+  - yd\b           # abbreviation for yards
+  - furlongs
+  - leagues
+  - miles
+  - mi\b           # abbreviation for miles
+  - fathoms
+  - ftm\b          # abbreviation for fathoms
+  - nautical miles
+  - nmi\b          # abbreviation for nautical miles
+  # Vernacular areas
+  - acres
+  - hectares
+  - square miles
+  - sq mi          # abbreviation for square miles
+  - square feet
+  - sq ft          # abbreviation for square feet
+  # Vernacular volumes
+  - cubic inches
+  - cu in          # abbreviation for cubic inches
+  - cubic feet
+  - cu ft          # abbreviation for cubic feet
+  - fluid ounces
+  - fl oz          # abbreviation for fluid ounces
+  - pints
+  - pt\b           # abbreviation for pints
+  - quarts
+  - qt\b           # abbreviation for quarts
+  - gallons
+  - gal\b          # abbreviation for gallons
+  - tsp\b          # abbreviation for teaspoons
+  - tbsp\b         # abbreviation for tablespoons
+  # Vernacular mass and weights
+  - pounds
+  - lb\b     # abbreviation for pounds
+  - ounces
+  - oz\b     # abbreviation for ounces
+  - tons
+  # Vernacular temperatures
+  - degrees [fF]ahrenheit
+  # Metric
+  - (?:milli|nano|)?seconds
+  - '[mn]?s\b'                    # abbreviation for *seconds
+  - (?:milli|kilo|giga)?amp(?:ere)?s
+  - '[mkg]?A\b'                   # abbreviation for *amperes
+  - '[kK]elvin'
+  - 'K\b'                         # abbreviation for kelvin
+  - (?:degrees\s+)?[cC](?:elsius|entigrade)
+  - 'C\b'
+  - '(?:centi|milli|kilo|nano)?meters'
+  - '[cmkn]?m\b'                  # abbreviation for *meters
+  - '(?:milli|kilo)?grams'
+  - '[mk]?g\b'                    # abbreviation for *grams
+  - radians
+  - (?:kilo)?newtons
+  - '[k]?N\b'                     # abbreviation for *newtons
+  - (?:kilo|mega|giga)?hertz
+  - '[kMG]?Hz'                    # abbreviation for *hertz
+  - (?:kilo)?pascals
+  - '[k]?Pa\b'                    # abbreviation for *pascals
+  - (?:milli|nano|pico|kilo|mega|giga|tera)joules
+  - '[mnpkMGT]?J\b'               # abbreviation for *joules
+  - (?:milli|nano|pico|femto|kilo|mega|giga|tera|peta)?watts
+  - '[mnpfkMGTP]W\b'              # abbreviation for *watts
+  - (?:milli|kilo|mega)?volts
+  - '[mkM]?V\b'                   # abbreviation for *volts
+  - ohms
+  - lumens
+  - lm\b                          # abbreviation for lumens
+  - '(?:mega)?pixels'
+  - MP\b                          # abbreviation for megapixels
+
+action:
+  name: edit
+  params:
+    - regex
+    - '[ ]+' # At least one literal regular space character
+    - ' '    # Literal nonbreaking space character

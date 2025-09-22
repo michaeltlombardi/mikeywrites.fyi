@@ -1,0 +1,17 @@
+level: error
+scope: text
+
+description: |-
+  Use triple periods (`...`) to represent an ellipsis (`…`). Hugo automatically
+  converts the triple periods. Nonstandard characters can make diffing and
+  parsing more difficult.
+message: >-
+  Write ellipses as `...`, not `…` for readability and diffing.
+
+extends: substitution
+nonword: true
+swap:
+  "…": '...'
+
+action:
+  name: replace

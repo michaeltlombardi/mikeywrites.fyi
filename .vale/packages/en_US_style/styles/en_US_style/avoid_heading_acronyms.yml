@@ -1,0 +1,16 @@
+# Borrowed from Microsoft.HeadingAcronyms
+level: warning
+scope: heading
+
+link: https://docs.microsoft.com/en-us/style-guide/acronyms#be-careful-with-acronyms-in-titles-and-headings
+description: |-
+  Avoid acronyms in headings, as they can be less readable especially when using
+  accessibility navigation.
+message: >-
+  Avoid using acronyms in a title or heading.
+
+extends: existence
+tokens:
+  - '[A-Z]{2,4}'
+
+action: null

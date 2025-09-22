@@ -1,0 +1,20 @@
+level: error
+scope: text
+
+description: |-
+  Avoid spaces between numerals and degree symbols (`°`) when indicating
+  a measurement like degrees of temperature or arc. For example, prefer
+  `45° wide` and `18°C` over `45 ° wide` and `18 °C`.
+message: >-
+  Measurements with symbol units shouldn't have a space between numerals and
+  the unit. Use `%s` instead of `%s`, which contains unnecessary spacing
+  between numerals and a degree symbol, typically indicating a measurement of
+  temperature or arc.
+
+extends: substitution
+nonword: true
+swap:
+  '(\d+)\s+°': "$1°"
+
+action:
+  name: replace

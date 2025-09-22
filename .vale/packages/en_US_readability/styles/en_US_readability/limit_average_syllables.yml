@@ -1,0 +1,19 @@
+level: warning
+
+description: |-
+  The writing for these posts is often highly technical but should remain
+  accessible to readers. Average syllable count is a very rough metric to
+  indicate reading difficulty. Here we just aim to keep it reasonable.
+
+  If an article triggers this rule, it's likely extremely complex and failing
+  other metrics.
+message: >-
+  Try to limit the average number of syllables per word to less than 3.
+  Current average: %s
+
+extends: metric
+condition: "> 3.0"
+formula: |
+  syllables / words
+
+action: null

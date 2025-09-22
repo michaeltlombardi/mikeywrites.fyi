@@ -1,0 +1,19 @@
+level: error
+scope: text
+
+description: |-
+  Avoid spaces between numerals and percent symbols (`%`). For example, prefer
+  `25%` over `25 %`. Percentages with the symbol suffix shouldn't have a space
+  between numerals and the symbol.
+message: >-
+  Percentages with the symbol suffix shouldn't have a space between numerals
+  and the unit. Use `%s` instead of `%s`, which contains unnecessary spacing
+  between numerals and a percent symbol.
+
+extends: substitution
+nonword: true
+swap:
+  '(\d+)\s+%': '$1%'
+
+action:
+  name: replace

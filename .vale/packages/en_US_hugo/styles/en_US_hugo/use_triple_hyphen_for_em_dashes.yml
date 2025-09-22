@@ -1,0 +1,17 @@
+level: error
+scope: text
+
+description: |-
+  Use triple dashes (`---`) to represent em dashes (`—`). Hugo automatically
+  converts the triple dashes. It's easier to distinguish between em and en
+  dashes as `---` and `--` than `—` and `–`.
+message: >-
+  Write em dashes as `---`, not `—` for readability and diffing.
+
+extends: substitution
+nonword: true
+swap:
+  "—": '---'
+
+action:
+  name: replace

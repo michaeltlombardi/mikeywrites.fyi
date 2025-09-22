@@ -1,0 +1,21 @@
+level: error
+scope: text
+
+link: https://languagetool.org/insights/post/punctuation-guide/#what-are-periods
+description: |-
+  A double period has no meaningful semantics in US English. If the period
+  was accidentally repeated, it should be replaced with a single period. If
+  the last period in an ellipsis was accidentally left off, it should be added.
+message: >-
+  Use a single period (`.`) or an ellipsis (`...`), not two periods (`..`).
+
+extends: existence
+nonword: true
+raw:
+  - '\b\.{2}(?!\.)'
+
+action:
+  name: replace
+  params:
+    - '.'
+    - '...'

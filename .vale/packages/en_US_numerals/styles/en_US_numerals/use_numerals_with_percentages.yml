@@ -1,0 +1,51 @@
+level: warning
+scope: text
+
+link: https://docs.microsoft.com/en-us/style-guide/numbers
+description: |-
+  When you're defining a specific percentage, always:
+
+  1.  Specify the value with numerals, like:
+      - `5 perent`, not `five percent`.
+      - `3.2 percentage points`, not `three point two percentage points`.
+      - `90%`, not `ninety %`.
+  1.  Always place a nonbreaking space after the numerals and before the text
+      when using `percent`, `percentage`, `percentages`, `percentage point`,
+      or `percentage points`.
+  1.  When using the percent symbol (`%`), define the symbol immediately
+      after the numerals without a separating nonbreaking space, like `5%`.
+
+  Percentages require precision, so write them with numerals. Use nonbreaking
+  spaces between the numerals and the indicating text so that the pair are
+  always displayed together even when the rendered text would normally break
+  across a line.
+message: >-
+  Don't spell out the number in '%s'. Use numerals instead, like `15.3 percent`
+  instead of `fifteen point three percent` or `5%%` instead of `five %%`.
+
+extends: existence
+raw:
+  - '(\b(?:'
+  - one|two|three|four|five|six|seven|eight|nine|
+  - ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|
+  - twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|
+  - hundred|thousand|million|billion|trillion
+  - )\b(?:\s|\spoint\s|-)?)+?
+tokens:
+  - percent\b
+  - percentages?(\spoints?)?
+  - '%\b'
+
+# Attempted to use a sequence definition, but couldn't get the tagger to
+# correctly identify compound cardinal numbers like `thirty-five`.
+# extends: sequence
+# message: >-
+#   The text `%[1]s %[2]s` seems to define a cardinal number before the word
+#   `percent`. Instead of writing out the cardinal number, you should use the
+#   numeric representation, like `35 percent` instead of `thirty-five percent`.
+# tokens:
+#   - tag: CD              # match any cardinal number.
+#     pattern: '[A-Za-z]+' # ignore numerals, they're already correct.
+#   - pattern: percent     # match `percent` exactly.
+
+action: null

@@ -1,0 +1,22 @@
+level: error
+scope: text
+
+link: https://learn.microsoft.com/style-guide/punctuation/dashes-hyphens/emes
+description: |-
+  A comma should follow the immediately preceding word or construct in a
+  sentence. Spaces between words and commas, like `one , two` are invalid.
+  Spaces between enclosing punctuation, like `(truly) , and so on` are also
+  invalid.
+message: >-
+  Don't put a space before a comma.
+
+extends: existence
+nonword: true
+tokens:
+  - '\s+,'
+
+action:
+  name: edit
+  params:
+    - remove
+    - ' '

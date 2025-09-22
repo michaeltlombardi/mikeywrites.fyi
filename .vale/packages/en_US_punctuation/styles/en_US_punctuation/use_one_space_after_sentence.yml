@@ -1,0 +1,24 @@
+level: error
+scope: text
+
+link: https://docs.microsoft.com/en-us/style-guide/punctuation/periods
+description: |-
+  <!-- vale en_US_grammar.use_that_or_which_for_clauses["convention that is"] = NO -->
+
+  The use of an em space or two spaces after a sentence is a historical
+  convention that is no longer required or recommended. Instead, separate
+  sentences with a single space after the ending punctuation and before the
+  first word of the new sentence.
+
+  <!-- vale en_US_grammar.use_that_or_which_for_clauses["convention that is"] = YES -->
+message: >-
+  %s contains unnecessary spaces after the ending punctuation. Use only
+  one space after each sentence.
+
+extends: substitution
+nonword: true
+swap:
+  '([^ .?!]+[.?!]?[''"\)]?[.?!]?)(\s{2,})([A-Z]\w*)': '$1 $3'
+
+action:
+  name: replace

@@ -1,0 +1,14 @@
+level: suggestion
+scope: paragraph
+
+description: |-
+  Avoid long paragraphs for readability.
+message: >-
+  Try to keep paragraphs short (less than 220 words).
+  Current word count: %s
+
+extends: occurrence
+max: 220
+token: \b(\w+)\b
+
+action: null

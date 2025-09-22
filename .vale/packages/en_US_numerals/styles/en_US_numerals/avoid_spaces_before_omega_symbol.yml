@@ -1,0 +1,19 @@
+level: error
+scope: text
+
+description: |-
+  Avoid spaces between numerals and omega symbols (`Ω`) when indicating
+  a measurement of ohms. For example, prefer `1.5Ω` over `1.5 Ω`.
+message: >-
+  Measurements with symbol units shouldn't have a space between numerals and
+  the unit. Use `%s` instead of `%s`, which contains unnecessary spacing
+  between numerals and an omega symbol, typically indicating a measurement of
+  ohms.
+
+extends: substitution
+nonword: true
+swap:
+  '(\d+)\s+Ω': '$1Ω'
+
+action:
+  name: replace

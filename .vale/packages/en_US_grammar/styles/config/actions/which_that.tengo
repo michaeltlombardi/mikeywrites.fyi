@@ -1,0 +1,17 @@
+text := import("text")
+
+// `suggestions` is required by Vale and represents the script's output.
+// Initialize suggestions
+suggestions := []
+
+// `match` is provided by Vale and represents the rule's matched text.
+if (text.re_match(`\s{+that}`, match)) {
+  suggest_which := text.re_replace(`\s+that`, match, `, which`)
+  suggestions = append(suggestions, suggest_which)
+}
+
+if (text.re_match(`\s+which`, match)) {
+  suggest_that := text.re_replace(`\s+which`, match, ` that`)
+  suggest_comma_which := text.re_replace(`\s+which`, match, `, which`)
+  suggestions = append(suggestions, suggest_that, suggest_comma_which)
+}

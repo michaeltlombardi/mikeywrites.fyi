@@ -1,0 +1,20 @@
+level: warning
+scope: heading
+
+link: https://docs.microsoft.com/en-us/style-guide/punctuation/periods
+description: |-
+  Avoid using punctuation in headings. Headings aren't sentences, they're
+  landmarks for navigation and intradocument orientation.
+message: >-
+  Don't use end punctuation in headings.
+
+extends: existence
+nonword: true
+tokens:
+  - "[a-z][.?!]$"
+
+action:
+  name: edit
+  params:
+    - trim_right
+    - ".?!"

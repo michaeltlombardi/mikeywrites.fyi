@@ -1,0 +1,20 @@
+level: error
+scope: text
+
+description: |-
+  Avoid spaces between numerals and prime symbols (`′` or `'`) when indicating
+  a measurement like feet or arcminutes. For example, prefer `5' long` and
+  `30°5′` over`5 ' long` or `30° 5 ′`.
+message: >-
+  Measurements with symbol units shouldn't have a space between numerals and
+  the unit. Use `%s` instead of `%s`, which contains unnecessary spacing
+  between numerals and a prime symbol, typically indicating a measurement of
+  imperial feet or degree minutes.
+
+extends: substitution
+nonword: true
+swap:
+  "(\\d+)\\s+('|′)": "$1'"
+
+action:
+  name: replace

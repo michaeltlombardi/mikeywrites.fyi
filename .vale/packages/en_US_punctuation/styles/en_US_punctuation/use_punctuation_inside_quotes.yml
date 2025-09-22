@@ -1,0 +1,16 @@
+level: error
+scope: text
+
+link: https://grammarist.com/punctuation/does-punctuation-go-inside-or-outside-of-quotation-marks/
+description: |-
+  In general, sentence-ending punctuation should be inside the quotation marks.
+message: >-
+  Punctuation should be inside the quotes.
+
+extends: substitution
+nonword: true
+swap:
+  '(["“][^"”“]+)(["”])([.,?!])': '$1$3$2'
+
+action:
+  name: replace

@@ -1,0 +1,44 @@
+level: warning
+scope: sentence
+
+link: 'https://developers.google.com/style/colons'
+description: |-
+  <!-- vale en_US_grammar.use_that_or_which_for_clauses["clause that continues"] = NO -->
+
+  A colon in a sentence indicates the start of a clause that continues the
+  same sentence. The clause should follow normal sentence casing, not start
+  a new sentence with the first word capitalized.
+
+  <!-- vale en_US_grammar.use_that_or_which_for_clauses["clause that continues"] = YES -->
+
+  This rule can trigger false positives for proper nouns. You can either add
+  a linting exception around the text, like:
+
+  ```markdown
+  <!-- vale en_US_punctuation.use_lowercase_after_colon["example: Hi"] = NO -->
+
+  For example: Hi world!
+
+  <!-- vale en_US_punctuation.use_lowercase_after_colon["example: Hi"] = YES -->
+  ```
+
+  Or ensure that the word is in the `accept.txt` file for a vocabulary. When
+  the word is the correctly cased form of a vocabulary term, this rule doesn't
+  flag the text.
+message: >-
+  The word after the colon in '%s' should be lowercased unless it's a proper
+  noun.
+
+extends: existence
+nonword: true
+raw:
+  - '\S+' # Any word, to avoid triggering on definition lists.
+  - ':'   # A literal colon
+  - '\s+' # At least one spacing character
+tokens:
+  - '[A-Z]\S+' # Any captialized word.
+
+action:
+  name: suggest
+  params:
+    - lowercase_after_colon.tengo

@@ -1,0 +1,21 @@
+level: error
+scope: text
+
+description: |-
+  Avoid spaces between numerals and double prime symbols (`″` or `"`) when
+  indicating a measurement like inches or arcseconds. For example, prefer
+  `5'4" long` and `30°5'20″` over `5 ' 4" long` or `30° 5' 20″`.
+
+message: >-
+  Measurements with symbol units shouldn't have a space between numerals and
+  the unit. Use `%s` instead of `%s`, which contains unnecessary spacing
+  between numerals and a double prime symbol, typically indicating a
+  measurement of imperial inches or arcseconds.
+
+extends: substitution
+nonword: true
+swap:
+  '(\d+)\s+("|″)': '$1$2'
+
+action:
+  name: replace

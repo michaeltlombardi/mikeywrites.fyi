@@ -1,0 +1,30 @@
+level: suggestion
+
+link: https://en.wikipedia.org/wiki/Lix_(readability_test)
+description: |-
+  <!-- vale en_US_style.avoid_passive_voice["is defined"] = NO -->
+
+  The LIX score provides a high level representation of how difficult a text is
+  to read. It is defined as the sum of the average word-count per sentence and
+  the percentage of words that are longer than six letters. The score breakdown
+  is:
+
+  <!-- vale en_US_style.avoid_passive_voice["is defined"] = YES -->
+
+  |      Score      | Reading difficulty |
+  |:---------------:|:-------------------|
+  |  `20` to `25`   | Very easy          |
+  |  `30` to `35`   | Easy               |
+  |  `40` to `45`   | Medium             |
+  |  `50` to `55`   | Difficult          |
+  | `60` and higher | Very difficult     |
+message: >-
+  Try to limit the reading difficulty to medium by keeping the LIX score
+  below 45. Current score: %s
+
+extends: metric
+condition: "> 45"
+formula: |
+  (words / sentences) + ((long_words * 100) / words)
+
+action: null

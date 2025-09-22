@@ -1,0 +1,5 @@
+# Allow both uses of mikey and Mikey
+[mM]ikey
+# Always use correct casing for brands
+GitHub
+Jira

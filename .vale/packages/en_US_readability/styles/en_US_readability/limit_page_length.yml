@@ -1,0 +1,17 @@
+level: suggestion
+
+description: |-
+  Blog posts should be generally quick to read. A page in a book is roughly
+  250--300 words. Three thousand words is about ten pages of reading. While
+  it's okay to write longer posts, we should aim to keep things short. Long
+  posts are candidates for series of posts instead.
+message: >-
+  Try to limit the total word count per page to less than 3000.
+  Current word count: %s
+
+extends: metric
+condition: "> 3000"
+formula: |
+  words * 1
+
+action: null
