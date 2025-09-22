@@ -1,0 +1,13 @@
+text := import("text")
+
+// `match` is provided by Vale and represents the rule's matched text.
+// `munged` represents the edited text.
+//
+// First, use only one space after the colon.
+munged := text.re_replace(`\s{2,}`, match, ` `)
+// Next, downcase the letter after the space
+found := text.re_find(`:\s+[A-Z]`, munged, 1)[0][0]["text"]
+munged = text.replace(munged, found, text.to_lower(found), 1)
+
+// `suggestions` is required by Vale and represents the script's output.
+suggestions := [munged]

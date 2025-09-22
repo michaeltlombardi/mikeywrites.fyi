@@ -1,0 +1,21 @@
+level: error
+scope: text
+
+link: https://learn.microsoft.com/style-guide/punctuation/dashes-hyphens/emes
+description: |-
+  Use an em dash (`---`) to set off a parenthetical phrase with more emphasis
+  than parentheses provide. In US English, you don't use spaces before or
+  after the em dash.
+message: >-
+  Don't put a space before or after a dash.
+
+extends: existence
+nonword: true
+tokens:
+  - '\s[---]\s'
+
+action:
+  name: edit
+  params:
+    - remove
+    - ' '

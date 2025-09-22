@@ -1,0 +1,22 @@
+level: error
+scope: sentence
+
+link: https://docs.microsoft.com/en-us/style-guide/numbers
+description: |-
+  En dashes are the correct punctuation to use for negative numbers.
+message: >-
+  Form a negative number with an en dash, not a hyphen.
+
+extends: existence
+nonword: true
+raw:
+  - '(?<!-|\S)-{1}'  # match a hyphen not preceded by a hyphen or space
+  - '\d+'            # Match at least one digit
+  - '(?:[.,]\d+)*\b' # Match any suffixing digits preceded by a comma or period
+
+action:
+  name: edit
+  params:
+    - regex
+    - "-"
+    - "--"

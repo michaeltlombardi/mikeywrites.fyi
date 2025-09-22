@@ -1,0 +1,18 @@
+level: suggestion
+scope: sentence
+
+link: 'https://learn.microsoft.com/style-guide/punctuation/semicolons'
+description: |-
+  Sentences that contain semicolons are often complex. Try to simplify the
+  sentence to eliminate the semicolon. Consider breaking the sentence into
+  multiple sentences or a list.
+message: >-
+  Use semicolons judiciously. Prefer decomposing into multiple sentences or
+  list items.
+
+extends: existence
+nonword: true
+tokens:
+  - ';'
+
+action: null

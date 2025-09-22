@@ -31,3 +31,23 @@ jobs:
       if: steps.changed-files.outputs.any_changed == 'true'
       with:
         globs: ${{ steps.changed-files.outputs.all_changed_files }}
+
+  prose:
+    name: Blog prose (en_US, vale)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: tj-actions/changed-files@v45
+      id: changed-files
+      with:
+        files: |-
+          ./README.md
+          ./.vale/**/*.md
+          ./content/*.md
+          ./content/blog/*.md
+    - uses: errata-ai/vale-action@v2.1.1
+      if: steps.changed-files.outputs.any_changed == 'true'
+      with:
+        files: ${{ steps.changed-files.outputs.all_changed_files }}

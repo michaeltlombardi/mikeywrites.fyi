@@ -1,0 +1,39 @@
+level: error
+scope: text
+
+description: |-
+  Apply custom `hunspell` dictionaries to the prose. This style defines the
+  following dictionaries:
+
+  <dl>
+    <dt>
+      <a href="./config/dictionaries/en_US.dic"><code>en_US</code></a>
+      (<a href="./config/dictionaries/en_US.aff">Affix file</a>)
+    </dt>
+    <dd>Basic US English dictionary.</dd>
+    <dt>
+      <a href="./config/dictionaries/en_US_tech.dic"><code>en_US_tech</code></a>
+      (<a href="./config/dictionaries/en_US_tech.aff">Affix file</a>)
+    </dt>
+    <dd>Additional dictionary for technical terms in US English.</dd>
+  </dl>
+
+  This style also defines the ignore file, [`phrases.txt`][phrases.txt], which
+  provides overrides to ignore as misspellings.
+
+  Add any unrecognized terms to one of the two dictionaries. Add any terms
+  that need specific casing to the project vocabulary instead.
+
+  [phrases.txt]: ./config/ignore/phrases.txt
+message: >-
+  Did you really mean '%s'? It doesn't seem to be a valid word.
+
+extends: spelling
+custom: false
+dictionaries:
+  - en_US
+  - en_US_tech
+ignore:
+  - phrases.txt
+
+action: null

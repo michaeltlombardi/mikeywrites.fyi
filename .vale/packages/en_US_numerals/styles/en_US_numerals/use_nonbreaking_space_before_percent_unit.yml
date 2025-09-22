@@ -1,0 +1,38 @@
+level: warning
+scope: text
+
+link: https://docs.microsoft.com/en-us/style-guide/numbers
+description: |-
+  When you're defining a specific percentage, always:
+
+  1.  Specify the value with numerals, like:
+      - `5 perent`, not `five percent`.
+      - `3.2 percentage points`, not `three point two percentage points`.
+      - `90%`, not `ninety %`.
+  1.  Always place a nonbreaking space after the numerals and before the text
+      when using `percent`, `percentage`, `percentages`, `percentage point`,
+      or `percentage points`.
+  1.  When using the percent symbol (`%`), define the symbol immediately
+      after the numerals without a separating nonbreaking space, like `5%`.
+
+  Percentages require precision, so write them with numerals. Use nonbreaking
+  spaces between the numerals and the indicating text so that the pair are
+  always displayed together even when the rendered text would normally break
+  across a line.
+message: >-
+  The apparent percentage '%s' uses a regular (breaking) space instead of a
+  nonbreaking space.
+
+extends: existence
+raw:
+  - '(\d+[,.]?){1,}([ ]*)'
+tokens:
+  - percent\b
+  - percentages?(\spoints?)?
+
+action:
+  name: edit
+  params:
+    - regex
+    - '[ ]+' # Any number of literal regular space characters
+    - ' '    # Literal nonbreaking space character

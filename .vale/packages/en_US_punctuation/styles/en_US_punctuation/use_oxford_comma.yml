@@ -1,0 +1,41 @@
+level: warning
+scope: sentence
+
+link: https://grammarist.com/punctuation/oxford-comma/
+description: |-
+  The Oxford comma, also known as the serial comma, helps to provide clarity
+  for a list of three or more items. Use the Oxford comma for clarity and to
+  make the prose easier to understand for readers who aren't native English
+  speakers.
+  
+  For example, consider the following sentence with an Oxford comma:
+
+  ```markdown
+  I love my friends, my dog, and big oak trees.
+  ```
+
+  Here the author is saying that they love three distinct entities:
+
+  - Their friends
+  - Their dog
+  - Big oak trees
+
+  Without the Oxford comma, the meaning of the sentence changes, especially
+  for readers who aren't necessarily native English speakers:
+
+  ```markdown
+  I love my friends, my dog and big oak trees.
+  ```
+
+  Without the comma, the sentence now implies that the authors friends _are_
+  their dog and big oak trees.
+message: >-
+  "Use the Oxford comma in '%s' for clarity."
+
+extends: substitution
+nonword: true
+swap:
+  '((?:[^\s,]+,){1,} \w+) ((?:and|or) \w+[.?!])': '$1, $2'
+
+action:
+  name: replace

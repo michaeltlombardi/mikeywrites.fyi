@@ -1,0 +1,17 @@
+level: error
+scope: text
+
+description: |-
+  Use double hyphens (`--`) to represent em dashes (`–`). Hugo automatically
+  converts the double hyphens. It's easier to distinguish between em and en
+  hyphens as `---` and `--` than `—` and `–`.
+message: >-
+  Write en dashes as `--`, not `–` for readability and diffing.
+
+extends: substitution
+nonword: true
+swap:
+  "–": '--'
+
+action:
+  name: replace

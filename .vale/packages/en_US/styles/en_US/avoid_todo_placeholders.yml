@@ -1,0 +1,17 @@
+level: error
+scope: text
+
+description: |-
+  Make sure all temporary markers have been removed before publishing by
+  checking for the strings `XXX`, `FIXME`, and `TODO`.
+message: >-
+  Placeholder '%s' left in text.
+
+extends: existence
+ignorecase: false
+tokens:
+  - XXX
+  - FIXME
+  - TODO
+
+action: null

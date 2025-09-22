@@ -1,4 +1,10 @@
 {
     "reflowMarkdown.preferredLineLength": 100,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "vale.doNotShowWarningForFileToBeSavedBeforeLinting": false,
+    "vale.enableSpellcheck": true,
+    "vale.readabilityProblemLocation": "both",
+    "vale.valeCLI.syncOnStartup": false,
+    "vale.trace.server": "messages",
+    "vale.valeCLI.config": ".vale.ini"
 }

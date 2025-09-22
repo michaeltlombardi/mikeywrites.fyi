@@ -1,0 +1,18 @@
+level: suggestion
+
+link: https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests
+description: |-
+  The Flesch-Kincaid grade level metric is an approximation of difficulty for
+  reading and normalizes the score to match US grade levels. Because this
+  blog tends to discuss complex and niche topics, we limit the grade level
+  to 10 rather than the more common 8.
+message: >-
+  Try to keep the Flesch-Kincaid grade level below 10.
+  Current grade level: %s
+
+extends: metric
+condition: "> 10.0"
+formula: |
+  (0.39 * (words / sentences)) + (11.8 * (syllables / words)) - 15.59
+
+action: null

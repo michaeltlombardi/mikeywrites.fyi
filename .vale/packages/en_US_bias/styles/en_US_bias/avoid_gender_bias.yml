@@ -1,0 +1,156 @@
+# Borrowed from and extending Microsoft.GenderBias and Alex.Gendered
+level: error
+scope: text
+
+description: |-
+  Avoid using gendered language where possible. Using gendered language raises
+  issues of inclusivity and bias.
+message: >-
+  Consider using '%s' instead of '%s'.
+
+extends: substitution
+ignorecase: true
+swap:
+  air(?:man|woman): pilot
+  air(?:men|women): pilots
+  alumn(?:a|us): graduate
+  alumn(?:ae|i): graduates
+  anchor(?:man|woman): anchor
+  anchor(?:men|women): anchors
+  ancient man: ancient civilization|ancient people
+  authoress: author
+  average housewife: average consumer|average household|average homemaker
+  average man: average person
+  average working man: average wage earner|average taxpayer
+  aviatrix: aviator
+  bitch: whine|complain|cry
+  bitching: whining|complaining|crying
+  brotherhood of man: the human family
+  calendar girl: model
+  call girl: escort|prostitute|sex worker
+  camera(?:man|woman): camera operator
+  camera(?:men|women): camera operators
+  churchman: cleric|practicing Christian|pillar of the Church
+  door(?:man|woman): concierge
+  door(?:men|women): concierges
+  draft(?:man|woman): drafter
+  draft(?:men|women): drafters
+  english master: english coordinator|senior teacher of english
+  englishmen: the english
+  executrix: executor
+  father of *: founder of
+  fellowship: camaraderie|community|organization
+  fire(?:man|woman): firefighter
+  fire(?:men|women): firefighter(s)
+  fisher(?:man|woman): fisher
+  fisher(?:men|women): fishers
+  founding father: the founders|founding leaders|forebears
+  frenchmen: french|the french
+  freshman: first-year student|fresher
+  freshwoman: first-year student|fresher
+  garbage(?:man|woman): waste collector
+  garbage(?:men|women): waste collectors
+  housemaid: house worker|domestic help
+  housewife: homemaker|homeworker
+  housewives: homemakers|homeworkers
+  industrial man: industrial civilization|industrial people
+  lady doctor: doctor
+  lady lawyer: lawyer
+  ladylike: courteous|cultured
+  leading lady: lead
+  like a man: resolutely|bravely
+  mad man: fanatic|zealot|enthusiast
+  mad men: fanatics|zealots|enthusiasts
+  madman: fanatic|zealot|enthusiast
+  madmen: fanatics|zealots|enthusiasts
+  maiden flight: first flight
+  maiden name: birth name
+  maiden race: first race
+  maiden speech: first speech
+  maiden voyage: first voyage
+  maiden: virgin
+  mail(?:man|woman): mail carrier
+  mail(?:men|women): mail carriers
+  man a desk: staff a desk
+  man and wife: husband and wife
+  man enough: strong enough
+  man hour: staff hour|hour of work
+  man hours: staff hours|hours of work|hours of labor|hours
+  man in the street: ordinary citizen|typical person|average person
+  man of action: dynamo
+  man of letters: scholar|writer|literary figure
+  man of the land: farmer|rural worker|grazier|landowner|rural community|country people|country folk
+  man of the world: sophisticate
+  man sized task: a demanding task|a big job
+  man the booth: staff the booth
+  man the phones: answer the phones
+  manhour: staff hour|hour of work
+  manhours: staff hours|hours of work|hours of labor|hours
+  mankind: humanity
+  manmade: manufactured|artificial|synthetic|machine-made|constructed
+  manned: staffed|crewed|piloted
+  manpower: human resources|workforce|personnel|staff|labor|personnel|labor force|staffing|combat personnel
+  mans best friend: a faithful dog
+  mansized task: a demanding task|a big job
+  master copy: pass key|original
+  master key: pass key|original
+  master of ceremonies: emcee|moderator|convenor
+  master plan: grand scheme|guiding principles
+  master the art: become skilled
+  masterful: skilled|authoritative|commanding
+  mastermind: genius|creator|instigator|oversee|launch|originate
+  masterpiece: "work of genius|chef d\u2019oeuvre"
+  masterplan: vision|comprehensive plan
+  masterstroke: trump card|stroke of genius
+  men of science: scientists
+  middle(?:man|woman): intermediary
+  middle(?:men|women): intermediaries
+  midwife: birthing nurse
+  miss\.: ms.
+  moan: whine|complain|cry
+  moaning: whining|complaining|crying
+  modern man: modern civilization|modern people
+  motherly: loving|warm|nurturing
+  mrs\.: ms.
+  news(?:man|woman): journalist
+  news(?:men|women): journalists
+  no mans land: unoccupied territory|wasteland|deathtrap
+  office girls: administrative staff
+  ombuds(?:man|woman): ombuds
+  oneupmanship: upstaging|competitiveness
+  poetess: poet
+  police(?:man|woman): cop
+  police(?:men|women): cops
+  railwayman: railway worker
+  repair(?:man|woman): technician
+  repair(?:men|women): technicians
+  sales(?:man|woman): salesperson
+  sales(?:men|women): sales people
+  sportsmanlike: fair|sporting
+  sportsmanship: fairness|good humor|sense of fair play
+  statesman like: diplomatic
+  statesmanlike: diplomatic
+  steward(?:ess)?: flight attendant
+  stockman: cattle worker|farmhand|drover
+  tax man: tax commissioner|tax office|tax collector
+  tradesmans entrance: service entrance
+  tribes(?:man|woman): tribe member
+  tribes(?:men|women): tribe members
+  unmanned: robotic|automated
+  usherette: usher
+  waitress: waiter
+  wife beater: tank top|sleeveless undershirt
+  wifebeater: tank top|sleeveless undershirt
+  woman doctor: doctor
+  woman lawyer: lawyer
+  woman painter: painter
+  woman scientist: scientist
+  woman scientists: scientists
+  work(?:man|woman): worker
+  work(?:men|women): workers
+  working mother: wage or salary earning woman|two-income family
+  working wife: wage or salary earning woman|two-income family
+  workmanship: quality construction|expertise|craft
+
+action:
+  name: replace

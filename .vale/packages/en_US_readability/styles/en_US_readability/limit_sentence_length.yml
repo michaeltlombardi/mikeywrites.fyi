@@ -1,0 +1,14 @@
+level: suggestion
+scope: sentence
+
+description: |-
+  Avoid long sentences for readability.
+message: >-
+  Try to keep sentences short (less than 40 words).
+  Current word count: %s
+
+extends: occurrence
+max: 40
+token: \b(\w+)\b
+
+action: null

@@ -1,0 +1,21 @@
+level: error
+scope: text
+
+link: 'https://learn.microsoft.com/style-guide/punctuation/dashes-hyphens/hyphens#noun-modifiers'
+description: |-
+  Don't hyphenate compound words that precede and modify a noun as a unit.
+message: >-
+  '%s' doesn't need a hyphen.
+
+extends: existence
+ignorecase: false
+nonword: true
+tokens:
+  - '\s[^\s-]+ly-'
+
+action:
+  name: edit
+  params:
+    - replace
+    - '-'
+    - ' '

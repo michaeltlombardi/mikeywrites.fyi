@@ -1,0 +1,18 @@
+level: suggestion
+
+description: |-
+  Every page gets a single H1 heading. H2 headings divide the prose into
+  sections. This metric functions as a smell-test for the overall complexity
+  of a page. More than 10 H2s pushes the content towards the very complex
+  end of the scale and indicates the post is a candidate for decomposing into
+  a series of posts.
+message: >-
+  Try to limit the total number of second level headings (H2s) per page to less
+  than 10. Current H2 count: %s
+
+extends: metric
+condition: "> 10"
+formula: |
+  heading.h2 * 1
+
+action: null

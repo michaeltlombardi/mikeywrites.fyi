@@ -1,0 +1,31 @@
+level: suggestion
+scope: text
+
+link: 'https://owl.purdue.edu/owl/general_writing/grammar/that_vs_which.html'
+description: |-
+  Use `that` for restrictive clauses. Use `which` for nonrestrictive clauses.
+
+  A clause is _restrictive_ when a reader requires the clause to correctly
+  understand the preceding noun. A clause is _nonrestrictive_ if a reader can
+  understand the preceding noun without the clause.
+
+  For more information, see [_That vs. Which_][that-vs-which].
+
+  [that-vs-which]: https://owl.purdue.edu/owl/general_writing/grammar/that_vs_which.html
+message: >-
+  Did you mean to use `%[2]s` in `%[1]s %[2]s %[3]s`? Use `that` when writing a
+  restrictive clause and `, which` when writing a nonrestrictive clause.
+
+extends: sequence
+tokens:
+  # match verbs and nouns.
+  - tag: VBD|VBG|VBN|VBP|VBZ|NN|NNP|NNPS|NNS
+  # match `which` exactly, 
+  - pattern: '(that|(?<!of |on |to |for |from |with |about |in )which)'
+  # match verbs
+  - tag: VBD|VBG|VBN|VBZ
+
+action:
+  name: suggest
+  params:
+    - which_that.tengo
