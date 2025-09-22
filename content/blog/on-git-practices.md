@@ -562,7 +562,7 @@ Until next time,
       little payoff. That's true. Branch naming is the least important thing I discuss in this post. On
       the other hand, this post is a collection of my pedantic heterodox opinions on working with git,
       and I do genuinely find it helpful to quickly filter and orient myself in codebases by branch
-      names. Five bagel of the time... Mikey will be able to do that for sure.
+      names.
 
       I don't say so in the body of this post, but these are just my personal (correct) opinions. You're
       free to do whatever makes sense for your context. Sometimes, I break these rules myself. None of
