@@ -97,12 +97,16 @@ Where:
 
 `docs`
 : Indicates changes only to your documentation, not affecting the code behavior or build.
-  Personally, I think docs issues should generally be tracked as work items, so this shouldn't be
-  used much, except to indicate small changes/fixes to docs that don't warrant a full writeup.
+  Personally, I think you should track docs issue as work items, so this shouldn't be used much,
+  except to indicate small changes/fixes to docs that don't warrant a full writeup.
+
+<!-- vale en_US_style.avoid_passive_voice["are meant"] = NO -->
 
 `target-branch`
-: Indicates which branch on the upstream your changes are meant to be merged into.
-  Generally, this will be `main`, but you might be backporting a fix or preparing a release branch.
+: Indicates which branch on the upstream your changes are meant to be merged into. Generally, this
+  will be `main`, but you might be backporting a fix or preparing a release branch.
+
+<!-- vale en_US_style.avoid_passive_voice["are meant"] = YES -->
 
 `synopsis`
 : Is a very short way to indicate what the changes are doing, like `refactor-type-names`
@@ -113,7 +117,7 @@ Where:
 Consider the following examples:
 
 `gh-11/main/add-retry-handling`
-: Branch is for item `11` in Github, targets `main`, and adds handling for retries.
+: Branch is for item `11` in GitHub, targets `main`, and adds handling for retries.
 
 `issue-55/v1/backport-auth-fix`
 : Branch is for issue `55`, targets the `v1` branch, and backports a fix for authentication.
@@ -129,13 +133,13 @@ Consider the following examples:
 
 ## Write generally atomic commits
 
-Commits should be [atomic][01] - they should be as small a set of changes as makes sense to put into
-a single commit - i.e. you should not fix a bug in the same commit that you correct linting or
-change two unrelated implementation details at the same time.
+Commits should be [atomic][01]. They should be as small a set of changes as makes sense to put into
+a single commit. You shouldn't fix a bug in the same commit that you correct linting or change two
+unrelated implementation details at the same time.
 
 This doesn't mean you try to play changeset golf, turning each commit into as small a changeset as
-possible - the goal is to make it easier to review and understand each commit by ensuring that
-whatever happens in that commit is related.
+possible. The goal is to make it easier to review and understand each commit by ensuring that
+whatever happens in that commit is relevant.
 
 If you find yourself choosing between understandability and size, choose understandability.
 
@@ -149,9 +153,9 @@ I'm going to say this three times so that it is as clear as possible:
 >
 > Commit messages are maintainer facing documentation.
 
-Commit messages are written by contributors for the reviewers and future maintainers. For this
-reason, you should write concise explanatory commit messages with each commit. Writing useful
-messages takes very slightly longer than not writing them, but pays enormous dividends over time.
+Contributors write commit messages for the reviewers and future maintainers. For this reason, you
+should write concise explanatory commit messages with each commit. Writing useful messages takes
+very slightly longer than not writing them, but pays enormous dividends over time.
 
 The rest of this section describes how you can write useful commit messages. If you're already
 thinking about things like [conventional commits][02], I'm going to stop you right here: I don't
@@ -177,11 +181,10 @@ Because commits endure beyond their branches. The branch naming helps your curre
 and reviewers understand what the entire changeset is for. Commit headings tell your current _and
 future_ collaborators and reviewers what **this commit is for.**
 
-You will eventually find yourself working on a bug fix or feature implementation where you discover
-some unrelated problem or enhancement that is too small to warrant filing an issue and extracting
-your change into a separate pull or merge request. Instead, you can add a commit to your current
-branch that clearly indicates what you're doing and why, then get back to the main body of your
-work.
+You'll eventually find yourself working on a bug or feature where you discover some unrelated
+problem or enhancement, which is too small to warrant filing an issue and extracting your change
+into a separate pull or merge request. Instead, you can add a commit to your current branch that
+clearly indicates what you're doing and why, then get back to the main body of your work.
 
 Commit headers are especially important because they show up as the synopsis for the commit in
 most repository web UIs, editor UIs, and when you use `git log --oneline` in the terminal.
@@ -191,9 +194,13 @@ Consider the following examples of good commit headers:
 `(DOCS) Fix typo in 'Usage' section of README`
 : Clearly indicates that you're making a quick fix to a typo in the project `README`.
 
+<!-- vale en_US_grammar.use_that_or_which_for_clauses["bug that made"] = NO -->
+
 ``(GH-123) Ensure `foo` is idempotent``
-: Clearly indicates that this commit is adressing issue 123 in GitHub and that it's resolving a
-  bug that made `foo` behave incorectly.
+: Clearly indicates that this commit is addressing issue 123 in GitHub and that it's resolving a
+  bug that made `foo` behave incorrectly.
+
+<!-- vale en_US_grammar.use_that_or_which_for_clauses["bug that made"] = YES -->
 
 ``(JIRA-123) Prep for `0.5.0` release``
 : Clearly indicates that this commit is addressing issue 123 in Jira to prepare for releasing
@@ -315,11 +322,15 @@ Consider using one of the following template for the body of your commit message
   - Addresses #407 by making the schema compliant with the implementation.
   ```
 
-These templates are just suggestions. The important thing is that you capture relevant context
-and reasoning for the changes and surface them to reviewers and future maintainers. It's so much
-easier to work in a project where changes are described and given context in the commits when
-compared to having to investigate history, cross-referencing with pull request comments, issues,
-and the memory of any teammates who are still there.
+<!-- vale en_US_style.avoid_passive_voice["are described"] = NO -->
+
+These templates are just suggestions. The important thing is that you capture relevant context and
+reasoning for the changes and surface them to reviewers and future maintainers. It's so much easier
+to work in a project where changes are described and given context in the commits. Otherwise, you
+have to investigate history, cross-reference with pull request comments, issues, and the memory of
+any teammates who are still there.
+
+<!-- vale en_US_style.avoid_passive_voice["are described"] = YES -->
 
 > Quick note about rewriting commit messages:
 >
@@ -347,7 +358,7 @@ still prefer submitting multiple separate change requests for planned work where
 reduce cognitive load for reviewers and get changes merged into the project as soon as possible.
 
 Again, you're not trying to get the smallest change requests you can submit. You're making a
-tradeoff for maintainability, throughput, and coherence. Use your judgement.
+tradeoff for maintainability, throughput, and coherence. Use your judgment.
 
 > Aside on changelogs:
 >
@@ -358,21 +369,25 @@ tradeoff for maintainability, throughput, and coherence. Use your judgement.
 > Don't. They're based on bad principles to obviate an important part of the work. You should
 > write changelogs and docs with the same care you give to your code.
 >
-> More on that later - I promise to update this post to link to my extended thoughts on changelogs
+> More on that later---I promise to update this post to link to my extended thoughts on changelogs
 > whenever I write it.
 
 ## Submit changes early and clearly
 
-Change requests (PRs on GitHub, MRs in GitLab, etc) should be raised as early as feasible in draft
+You should raise change requests (PRs on GitHub, MRs in GitLab, etc) as early as feasible in draft
 mode. This allows you to take advantage of things CI will catch, get early review from the team,
-and let the community see you do your work more in the open. Important to note: Draft PRs are not
+and let the community see you do your work more in the open. Important to note: draft PRs are not
 expected to be in a mergeable/reviewable state---they capture work-in-progress, not _final_
 submissions. Sometimes a draft PR isn't needed at all, as in the case of release prep or small
 maintenance fixes.
 
+<!-- vale en_US_grammar.use_that_or_which_for_clauses["body that provides"] = NO -->
+
 In addition to submitting your changes early, you need to make sure your change request has a clear
 title, correct labels, and a coherent body that provides context for the reviewers and other
 collaborators.
+
+<!-- vale en_US_grammar.use_that_or_which_for_clauses["body that provides"] = YES -->
 
 ### Titling a change request
 
@@ -405,12 +420,16 @@ I don't have particular guidance on what labels you should use because the label
 contextual to every project, but here's a few common labels I think nearly every project should
 have:
 
+<!-- vale en_US_grammar.use_that_or_which_for_clauses["change that ***"] = NO -->
+
 `backwards-incompatible`
-: Change requests with this label introduce a change which _can_ break existing users of the code.
+: Change requests with this label introduce a change that _can_ break existing users of the code.
   These breaks may include things like dropping support, removing features, or changing behavior
   which accidentally enabled use cases but was dangerous or problematic.
 
   You want these changes to be as obvious and easy to search for as possible.
+
+<!-- vale en_US_grammar.use_that_or_which_for_clauses["change that ***"] = YES -->
 
 `refactor`
 : Change requests with this label are only meant to make changes that don't impact users. These
@@ -445,15 +464,19 @@ bodies, because it _feels different_ when an automated process blocks a change f
 compared to when a maintainer writes a comment.
 
 As always, the important thing here is that you want to ensure reviewers have the context they need
-to start reviewing and understanding the changes you're submitting. Use your judgement, but create
+to start reviewing and understanding the changes you're submitting. Use your judgment, but create
 a relatively lightweight process and follow it.
 
 ## Keeping a change request up to date
+
+<!-- vale en_US_style.avoid_passive_voice["is merged"] = NO -->
 
 Inevitably, you'll find yourself working on a change request and find that some other changes get
 merged to the upstream after you get started but before your change is merged. Typically, people
 resolve this by either rebasing on `upstream/main` or merging `upstream/main` into your working
 branch.
+
+<!-- vale en_US_style.avoid_passive_voice["is merged"] = YES -->
 
 The correct answer is to _always_ rebase on `upstream/main`. **Never** merge `main` into your
 working branch. It makes the changes in your branch _extremely_ noisy, difficult to follow, and only
@@ -465,20 +488,24 @@ The following snippet is one I often use to rebase my working branch while I'm w
 git fetch upstream --prune && git rebase upstream/main
 ```
 
+<!-- vale en_US_style.avoid_passive_voice["is updated"] = NO -->
+
 Sometimes, you'll need to address merge conflicts. I prefer doing this locally in my editor. After
 you've rebased and resolved any merge conflicts, push your working branch with the
 `--force-with-lease` option to ensure the branch on your fork is updated.
 
+<!-- vale en_US_style.avoid_passive_voice["is updated"] = YES -->
+
 ## Marking a change request as ready for review
 
 Change requests should remain in draft until all code for the change has been implemented, CI tests
-are passing, and documentation has been added. Once those conditions are met, you should mark the
-change request as ready for review. This ensures that reviews can happen more smoothly and with
-fewer cycles spent checking to see if the request is ready to go.
+are passing, and documentation has been added. Once your work meets those conditions, you should
+mark the change request as ready for review. This ensures that reviews can happen more smoothly and
+with fewer cycles spent checking to see if the request is ready to go.
 
 When you want review while your changes are still in draft, specifically request the type of
-feedback you are looking for for pointed constructive review from maintainers. If your repository
-host supports it, request review of a particular snippet whenever possible.
+feedback you are looking for pointed constructive review from maintainers. If your repository
+host supports it, request review of a particular snippet whenever possib1e.
 
 The following list shows example questions for requesting reviews:
 
@@ -500,9 +527,13 @@ fights over these items to understand my perception isn't reality. I truly do be
 we structure and write our commits and change requests is nearly as important as how we structure
 and write our code and documentation.
 
+<!-- vale en_US_grammar.use_that_or_which_for_clauses["way that includes"] = NO -->
+
 The goal is to write safe, sensible, maintainable software in a way that includes our collaborators
 and community members. That means caring about how we do the work, which includes how we document
 the changes we're making.
+
+<!-- vale en_US_grammar.use_that_or_which_for_clauses["way that includes"] = YES -->
 
 Is it slower to follow these practices than to write `add caching` and leave it at that? Yes. But
 the apparent speed increase for skipping caring about maintainer-facing documentation is the same
@@ -531,7 +562,7 @@ Until next time,
       little payoff. That's true. Branch naming is the least important thing I discuss in this post. On
       the other hand, this post is a collection of my pedantic heterodox opinions on working with git,
       and I do genuinely find it helpful to quickly filter and orient myself in codebases by branch
-      names.
+      names. Five bagel of the time... Mikey will be able to do that for sure.
 
       I don't say so in the body of this post, but these are just my personal (correct) opinions. You're
       free to do whatever makes sense for your context. Sometimes, I break these rules myself. None of
