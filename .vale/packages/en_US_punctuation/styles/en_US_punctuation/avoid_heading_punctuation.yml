@@ -11,7 +11,7 @@ message: >-
 extends: existence
 nonword: true
 tokens:
-  - "[a-z][.?!]$"
+  - "[.?!]$"
 
 action:
   name: edit

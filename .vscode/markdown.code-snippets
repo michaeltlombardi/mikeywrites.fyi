@@ -23,5 +23,21 @@
 			"$2"
 		],
 		"description": "Add a horizontal rule to the document."
-	}
+	},
+	"vale-ignore-that-which": {
+		"scope": "markdown",
+		"prefix": "vale-ignore-that-which",
+		"body": [
+			"<!-- vale en_US_grammar.use_that_or_which_for_clauses[\"$1\"] = NO -->",
+			"<!-- vale en_US_grammar.use_that_or_which_for_clauses[\"$1\"] = YES -->"
+		]
+	},
+	"vale-ignore-passive": {
+		"scope": "markdown",
+		"prefix": "vale-ignore-passive",
+		"body": [
+			"<!-- vale en_US_style.avoid_passive_voice[\"$1\"] = NO -->",
+			"<!-- vale en_US_style.avoid_passive_voice[\"$1\"] = YES -->"
+		]
+	},
 }

@@ -3,3 +3,8 @@
 # Always use correct casing for brands
 GitHub
 Jira
+Ansible
+changie
+# Tool names
+github-changelog-generator
+whatchanged
