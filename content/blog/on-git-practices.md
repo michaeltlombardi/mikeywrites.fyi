@@ -371,6 +371,8 @@ tradeoff for maintainability, throughput, and coherence. Use your judgment.
 >
 > More on that later---I promise to update this post to link to my extended thoughts on changelogs
 > whenever I write it.
+>
+> **Edit:** I wrote that post and called it [_Stop using changelog generators_][05].
 
 ## Submit changes early and clearly
 
@@ -576,3 +578,4 @@ Until next time,
 [02]: https://www.conventionalcommits.org/en/v1.0.0/
 [03]: https://github.com/puppetlabs/Puppet.Dsc/commit/d3433d3b105cab580d1233a728bc6beab86d022d
 [04]: https://github.com/PowerShell/DSC/commit/916548c74fcef82ec3f3e84cf917d969f9d826ad
+[05]: ./stop-using-changelog-generators.md
